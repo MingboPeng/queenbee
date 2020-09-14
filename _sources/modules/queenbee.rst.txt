@@ -1,0 +1,24 @@
+queenbee package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   queenbee.base
+   queenbee.cli
+   queenbee.config
+   queenbee.operator
+   queenbee.recipe
+   queenbee.repository
+   queenbee.workflow
+
+Module contents
+---------------
+
+.. automodule:: queenbee
+   :members:
+   :undoc-members:
+   :show-inheritance:

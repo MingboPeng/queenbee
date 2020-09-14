@@ -1,0 +1,7 @@
+queenbee.operator.metadata module
+=================================
+
+.. automodule:: queenbee.operator.metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:

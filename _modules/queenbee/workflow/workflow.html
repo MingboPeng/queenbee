@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>queenbee.workflow.workflow &#8212; queenbee  documentation</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/jsv.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/app.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/mode-json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/theme-chrome.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tv4/1.2.7/tv4.min.js"></script>
+    <script src="../../../_static/js/ref-parser.min.js"></script>
+    <script src="../../../_static/js/jsv.js"></script>
+    <script src="../../../_static/js/app.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          queenbee</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Queenbee :crown:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../README.html#local-development">Local Development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">How To</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guides/index.html#pre-flight-check">Pre-Flight Check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/index.html#tools">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/index.html#knowledge">Knowledge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guides/index.html#guides">Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/operator.html">Create A New Operator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#folder-structure">Folder Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#configuration">Configuration</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../guides/operator.html#docker-config">Docker Config</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#operator-yaml">Operator.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#your-first-function">Your First Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#packaging-and-sharing">Packaging and Sharing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/operator.html#using-operators">Using Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/recipe.html">Create A New Recipe</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#folder-structure">Folder Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#metadata-configuration">Metadata Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#flow">Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#dag-tasks">DAG Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#referencing-outputs-to-inputs">Referencing Outputs to Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#artifact-path-context-resolution">Artifact Path Context Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/recipe.html#working-with-loops">Working With Loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/repository.html">Create and Manage a Repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#folder-structure">Folder Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#adding-packages">Adding Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#repository-indexing">Repository Indexing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#using-a-local-repository">Using a Local Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../guides/repository.html#overwriting-deleting-existing-package-versions">Overwriting/Deleting Existing Package Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../schemas/index.html">Queenbee Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/operators.html">Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/operators.html#schema">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/operators.html#openapi-docs">OpenAPI Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/operators.html#openapi-definition">OpenAPI Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/operators.html#json-schema-definition">JSON Schema Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/operators.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/operators.html#minimal">Minimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/operators.html#fully-configured">Fully Configured</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/operators.html#energy-plus">Energy Plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/operators.html#honeybee-radiance">Honeybee Radiance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/recipes.html">Recipes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/recipes.html#schema">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/recipes.html#openapi-docs">OpenAPI Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/recipes.html#openapi-definition">OpenAPI Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/recipes.html#json-schema-definition">JSON Schema Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/recipes.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/recipes.html#minimal">Minimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../schemas/recipes.html#daylight-factor-recipe">Daylight-Factor Recipe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/workflows.html">Workflows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/workflows.html#schema">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/workflows.html#openapi-docs">OpenAPI Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/workflows.html#openapi-definition">OpenAPI Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/workflows.html#json-schema-definition">JSON Schema Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../schemas/workflows.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cli/index.html">CLI Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/index.html#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/main.html">Main</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../cli/main.html#queenbee">queenbee</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/main.html#queenbee-viz">viz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/operator.html">Operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../cli/operator.html#queenbee-operator">queenbee operator</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/operator.html#queenbee-operator-lint">lint</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/operator.html#queenbee-operator-new">new</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/operator.html#queenbee-operator-package">package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/recipe.html">Recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe">queenbee recipe</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe-install">install</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe-link">link</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe-lint">lint</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe-new">new</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/recipe.html#queenbee-recipe-package">package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/repository.html">Repositories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../cli/repository.html#queenbee-repository">queenbee repository</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/repository.html#queenbee-repository-index">index</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/repository.html#queenbee-repository-init">init</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../cli/repository.html#queenbee-repository-serve">serve</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">API Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/queenbee.html">queenbee package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../modules/queenbee.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.base.html">queenbee.base package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.base.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.base.basemodel.html">queenbee.base.basemodel module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.base.io.html">queenbee.base.io module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.base.parser.html">queenbee.base.parser module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.base.request.html">queenbee.base.request module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.base.variable.html">queenbee.base.variable module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.base.html#module-queenbee.base">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.cli.html">queenbee.cli package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.cli.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.cli.config.html">queenbee.cli.config package</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.config.html#submodules">Submodules</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.config.auth.html">queenbee.cli.config.auth module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.config.view.html">queenbee.cli.config.view module</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.config.html#module-queenbee.cli.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.cli.operator.html">queenbee.cli.operator package</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.operator.html#submodules">Submodules</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.operator.lint.html">queenbee.cli.operator.lint module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.operator.new.html">queenbee.cli.operator.new module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.operator.package.html">queenbee.cli.operator.package module</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.operator.html#module-queenbee.cli.operator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.html">queenbee.cli.recipe package</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.html#submodules">Submodules</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.install.html">queenbee.cli.recipe.install module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.link.html">queenbee.cli.recipe.link module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.lint.html">queenbee.cli.recipe.lint module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.new.html">queenbee.cli.recipe.new module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.package.html">queenbee.cli.recipe.package module</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.recipe.html#module-queenbee.cli.recipe">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.cli.repository.html">queenbee.cli.repository package</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.repository.html#submodules">Submodules</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.repository.index.html">queenbee.cli.repository.index module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.repository.init.html">queenbee.cli.repository.init module</a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../modules/queenbee.cli.repository.serve.html">queenbee.cli.repository.serve module</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../../modules/queenbee.cli.repository.html#module-queenbee.cli.repository">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.cli.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.cli.context.html">queenbee.cli.context module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.cli.html#module-queenbee.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.config.html">queenbee.config package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.config.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.config.auth.html">queenbee.config.auth module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.config.html#module-queenbee.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.operator.html">queenbee.operator package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.operator.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.operator.function.html">queenbee.operator.function module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.operator.metadata.html">queenbee.operator.metadata module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.operator.operator.html">queenbee.operator.operator module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.operator.html#module-queenbee.operator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.recipe.html">queenbee.recipe package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.recipe.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.artifact_source.html">queenbee.recipe.artifact_source module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.dag.html">queenbee.recipe.dag module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.dependency.html">queenbee.recipe.dependency module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.metadata.html">queenbee.recipe.metadata module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.recipe.html">queenbee.recipe.recipe module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.recipe.reference.html">queenbee.recipe.reference module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.recipe.html#module-queenbee.recipe">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.repository.html">queenbee.repository package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.repository.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.repository.index.html">queenbee.repository.index module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.repository.package.html">queenbee.repository.package module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.repository.html#module-queenbee.repository">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../modules/queenbee.workflow.html">queenbee.workflow package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.workflow.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.workflow.arguments.html">queenbee.workflow.arguments module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.workflow.status.html">queenbee.workflow.status module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../modules/queenbee.workflow.workflow.html">queenbee.workflow.workflow module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../modules/queenbee.workflow.html#module-queenbee.workflow">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../modules/queenbee.html#module-queenbee">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Queenbee :crown:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../schemas/index.html">Queenbee Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cli/index.html">CLI Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">API Docs</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Queenbee :crown:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">How To</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../schemas/index.html">Queenbee Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cli/index.html">CLI Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">API Docs</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <h1>Source code for queenbee.workflow.workflow</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">validator</span>
+
+<span class="kn">from</span> <span class="nn">..base.basemodel</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">..recipe</span> <span class="kn">import</span> <span class="n">BakedRecipe</span>
+<span class="kn">from</span> <span class="nn">.arguments</span> <span class="kn">import</span> <span class="n">Arguments</span>
+<span class="kn">from</span> <span class="nn">.status</span> <span class="kn">import</span> <span class="n">WorkflowStatus</span>
+
+
+<div class="viewcode-block" id="Workflow"><a class="viewcode-back" href="../../../modules/queenbee.workflow.workflow.html#queenbee.workflow.workflow.Workflow">[docs]</a><span class="k">class</span> <span class="nc">Workflow</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Queenbee Workflow.</span>
+
+<span class="sd">    A Workflow is a Baked Recipe with some arguments that will be used to execute the</span>
+<span class="sd">    recipe.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">recipe</span><span class="p">:</span> <span class="n">BakedRecipe</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="o">...</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The baked recipe to be used by the execution engine to generate a &#39;</span>
+        <span class="s1">&#39;workflow&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">labels</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Optional user data as a dictionary. User data is for user reference&#39;</span>
+        <span class="s1">&#39; only and will not be used in the execution of the workflow.&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">arguments</span><span class="p">:</span> <span class="n">Arguments</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Input arguments for this workflow&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">status</span><span class="p">:</span> <span class="n">WorkflowStatus</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The status of the workflow&#39;</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="Workflow.check_entrypoint_inputs"><a class="viewcode-back" href="../../../modules/queenbee.workflow.workflow.html#queenbee.workflow.workflow.Workflow.check_entrypoint_inputs">[docs]</a>    <span class="nd">@validator</span><span class="p">(</span><span class="s1">&#39;arguments&#39;</span><span class="p">,</span> <span class="n">always</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">check_entrypoint_inputs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check the arguments match the recipe entrypoint inputs&quot;&quot;&quot;</span>
+
+        <span class="n">recipe</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;recipe&#39;</span><span class="p">)</span>
+
+        <span class="n">recipe_inputs</span> <span class="o">=</span> <span class="n">recipe</span><span class="o">.</span><span class="n">inputs</span>
+
+        <span class="k">if</span> <span class="n">recipe_inputs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">artifacts</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Arguments</span><span class="p">()</span>
+
+            <span class="n">artifacts</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">artifacts</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">parameters</span>
+
+            <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">recipe_inputs</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">parameter</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+                    <span class="n">exists</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                        <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">parameter</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">),</span> <span class="kc">None</span>
+                    <span class="p">)</span>
+                    <span class="k">assert</span> <span class="n">exists</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> \
+                        <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s1">&#39;Workflow must provide argument for parameter&#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
+                        <span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">artifact</span> <span class="ow">in</span> <span class="n">recipe_inputs</span><span class="o">.</span><span class="n">artifacts</span><span class="p">:</span>
+                <span class="n">exists</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">artifact</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">artifacts</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">assert</span> <span class="n">exists</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> \
+                    <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s1">&#39;Workflow must provide argument for artifact </span><span class="si">{</span><span class="n">artifact</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
+                    <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">v</span></div>
+
+<div class="viewcode-block" id="Workflow.from_baked_recipe"><a class="viewcode-back" href="../../../modules/queenbee.workflow.workflow.html#queenbee.workflow.workflow.Workflow.from_baked_recipe">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_baked_recipe</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">recipe</span><span class="p">:</span> <span class="n">BakedRecipe</span><span class="p">,</span>
+        <span class="n">arguments</span><span class="p">:</span> <span class="n">Arguments</span> <span class="o">=</span> <span class="n">Arguments</span><span class="p">(),</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generate a workflow from a Baked Recipe</span>
+
+<span class="sd">        Arguments:</span>
+<span class="sd">            recipe {BakedRecipe} -- A Baked Recipe</span>
+
+<span class="sd">        Keyword Arguments:</span>
+<span class="sd">            arguments {Arguments} -- Workflow arguments (default: {Arguments()})</span>
+<span class="sd">            labels {Dict} -- A dictionary of labels used to mark/differentiate a workflow</span>
+<span class="sd">                (default: {{}})</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Workflow -- A workflow object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;recipe&#39;</span><span class="p">:</span> <span class="n">recipe</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="s1">&#39;arguments&#39;</span><span class="p">:</span> <span class="n">arguments</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="s1">&#39;labels&#39;</span><span class="p">:</span> <span class="n">labels</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">input_dict</span><span class="p">)</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+queenbee.cli.operator package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   queenbee.cli.operator.lint
+   queenbee.cli.operator.new
+   queenbee.cli.operator.package
+
+Module contents
+---------------
+
+.. automodule:: queenbee.cli.operator
+   :members:
+   :undoc-members:
+   :show-inheritance:

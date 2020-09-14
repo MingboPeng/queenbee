@@ -1,0 +1,480 @@
+{
+  "openapi": "3.0.2",
+  "servers": [],
+  "info": {
+    "description": "Schema documentation for Queenbee Operators",
+    "version": "1.16.3",
+    "title": "Queenbee Operator Schema",
+    "contact": {
+      "name": "Ladybug Tools",
+      "email": "info@ladybug.tools",
+      "url": "https://github.com/ladybug-tools/queenbee"
+    },
+    "x-logo": {
+      "url": "https://user-images.githubusercontent.com/2915573/71930319-6986f200-3169-11ea-984d-b0f330cfaaa3.png",
+      "altText": "Queenbee logo"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/ladybug-tools/queenbee/blob/master/LICENSE"
+    }
+  },
+  "externalDocs": {
+    "description": "GitHub Repository",
+    "url": "https://github.com/ladybug-tools/queenbee"
+  },
+  "tags": [
+    {
+      "name": "config_model",
+      "x-displayName": "Config",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Config\" />\n"
+    },
+    {
+      "name": "dockerconfig_model",
+      "x-displayName": "DockerConfig",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DockerConfig\" />\n"
+    },
+    {
+      "name": "function_model",
+      "x-displayName": "Function",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Function\" />\n"
+    },
+    {
+      "name": "functionartifact_model",
+      "x-displayName": "FunctionArtifact",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FunctionArtifact\" />\n"
+    },
+    {
+      "name": "functioninputs_model",
+      "x-displayName": "FunctionInputs",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FunctionInputs\" />\n"
+    },
+    {
+      "name": "functionoutputs_model",
+      "x-displayName": "FunctionOutputs",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FunctionOutputs\" />\n"
+    },
+    {
+      "name": "functionparameterin_model",
+      "x-displayName": "FunctionParameterIn",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FunctionParameterIn\" />\n"
+    },
+    {
+      "name": "functionparameterout_model",
+      "x-displayName": "FunctionParameterOut",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FunctionParameterOut\" />\n"
+    },
+    {
+      "name": "localconfig_model",
+      "x-displayName": "LocalConfig",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/LocalConfig\" />\n"
+    },
+    {
+      "name": "maintainer_model",
+      "x-displayName": "Maintainer",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Maintainer\" />\n"
+    },
+    {
+      "name": "metadata_model",
+      "x-displayName": "MetaData",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/MetaData\" />\n"
+    },
+    {
+      "name": "operator_model",
+      "x-displayName": "Operator",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Operator\" />\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Workflow",
+      "tags": [
+        "config_model",
+        "dockerconfig_model",
+        "function_model",
+        "functionartifact_model",
+        "functioninputs_model",
+        "functionoutputs_model",
+        "functionparameterin_model",
+        "functionparameterout_model",
+        "localconfig_model",
+        "maintainer_model",
+        "metadata_model",
+        "operator_model"
+      ]
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Maintainer": {
+        "title": "Maintainer",
+        "description": "Maintainer information",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the author/maintainer person or organization.",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "description": "The email address of the author/maintainer person or organization.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "MetaData": {
+        "title": "MetaData",
+        "description": "Operator metadata information",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Operator name. This name should be unique among all the operators in your workflow.",
+            "type": "string"
+          },
+          "tag": {
+            "title": "Tag",
+            "description": "The tag of the operator",
+            "type": "string"
+          },
+          "app_version": {
+            "title": "App Version",
+            "description": "The version of the app binary backing the operator (CLI tool or container)",
+            "type": "string"
+          },
+          "keywords": {
+            "title": "Keywords",
+            "description": "A list of keywords to search the operator by",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maintainers": {
+            "title": "Maintainers",
+            "description": "A list of maintainers for the operator",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Maintainer"
+            }
+          },
+          "home": {
+            "title": "Home",
+            "description": "The URL of this operator home page",
+            "type": "string"
+          },
+          "sources": {
+            "title": "Sources",
+            "description": "A list of URLs to source code for this operator",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "title": "Icon",
+            "description": "A URL to an SVG or PNG image to be used as an icon",
+            "type": "string"
+          },
+          "deprecated": {
+            "title": "Deprecated",
+            "description": "Whether this operator is deprecated",
+            "type": "boolean"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A description of what this operator does",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "tag"
+        ]
+      },
+      "DockerConfig": {
+        "title": "DockerConfig",
+        "description": "Operator Configuration to run in a Docker container",
+        "type": "object",
+        "properties": {
+          "image": {
+            "title": "Image",
+            "description": "Docker image name. Must include tag.",
+            "type": "string"
+          },
+          "registry": {
+            "title": "Registry",
+            "description": "The container registry URLs that this container should be pulled from. Will default to Dockerhub if none is specified.",
+            "type": "string"
+          },
+          "workdir": {
+            "title": "Workdir",
+            "description": "The working directory the entrypoint command of the container runsin. This is used to determine where to load artifacts when running in the container.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "image",
+          "workdir"
+        ]
+      },
+      "LocalConfig": {
+        "title": "LocalConfig",
+        "description": "Operator Configuration to run on a desktop.",
+        "type": "object",
+        "properties": {}
+      },
+      "Config": {
+        "title": "Config",
+        "description": "Operator configuration.\n\nThe config is used to schedule functions on a desktop or in other contexts\n(ie: Docker).",
+        "type": "object",
+        "properties": {
+          "docker": {
+            "title": "Docker",
+            "description": "The configuration to use this operator in a docker container",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DockerConfig"
+              }
+            ]
+          },
+          "local": {
+            "title": "Local",
+            "description": "The configuration to use this operator locally",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LocalConfig"
+              }
+            ]
+          }
+        },
+        "required": [
+          "docker"
+        ]
+      },
+      "FunctionParameterIn": {
+        "title": "FunctionParameterIn",
+        "description": "A Function Parameter\n\nParameter indicate a passed string parameter to a service template with an optional\ndefault value.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name is the parameter name. must be unique within a task's inputs.",
+            "type": "string"
+          },
+          "default": {
+            "title": "Default",
+            "description": "Default value to use for an input parameter if a value was not supplied.",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Optional description for input parameter.",
+            "type": "string"
+          },
+          "required": {
+            "title": "Required",
+            "description": "Whether this value must be specified in a task argument.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "FunctionArtifact": {
+        "title": "FunctionArtifact",
+        "description": "A Function Artifact object\n\nThis indicates the path within the function context at which a certain file or folder\n(ie: artifact) can be found.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the artifact. Must be unique within a task's inputs / outputs.",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Optional description for input parameter.",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "description": "Path to the artifact relative to the working directory where the command is executed.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "path"
+        ]
+      },
+      "FunctionInputs": {
+        "title": "FunctionInputs",
+        "description": "The Inputs of a Function",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FunctionParameterIn"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FunctionArtifact"
+            }
+          }
+        }
+      },
+      "FunctionParameterOut": {
+        "title": "FunctionParameterOut",
+        "description": "A Function Artifact object\n\nThis indicates the path within the function context at which a certain file or folder\n(ie: artifact) can be found.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the artifact. Must be unique within a task's inputs / outputs.",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Optional description for input parameter.",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "description": "Path to the artifact relative to the working directory where the command is executed.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "path"
+        ]
+      },
+      "FunctionOutputs": {
+        "title": "FunctionOutputs",
+        "description": "The Outputs of a Function",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FunctionParameterOut"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FunctionArtifact"
+            }
+          }
+        }
+      },
+      "Function": {
+        "title": "Function",
+        "description": "A Function with a single command",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Function name. Must be unique within an operator.",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Function description. A short human readable description for this function.",
+            "type": "string"
+          },
+          "inputs": {
+            "title": "Inputs",
+            "description": "Input arguments for this function.",
+            "default": {
+              "parameters": [],
+              "artifacts": []
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FunctionInputs"
+              }
+            ]
+          },
+          "command": {
+            "title": "Command",
+            "description": "Full shell command for this function. Each function accepts only one command. The command will be executed as a shell command in operator. For running several commands after each other use && between the commands or pipe data from one to another using |",
+            "type": "string"
+          },
+          "outputs": {
+            "title": "Outputs",
+            "description": "List of output arguments.",
+            "default": {
+              "parameters": [],
+              "artifacts": []
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FunctionOutputs"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "command"
+        ]
+      },
+      "Operator": {
+        "title": "Operator",
+        "description": "A Queenbee Operator.\n\nAn Operator contains runtime configuration for a Command Line Interface (CLI) and\na list of functions that can be executed using this CLI tool.",
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "title": "Metadata",
+            "description": "The Operator metadata information",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaData"
+              }
+            ]
+          },
+          "config": {
+            "title": "Config",
+            "description": "The configuration information to run this operator",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Config"
+              }
+            ]
+          },
+          "functions": {
+            "title": "Functions",
+            "description": "List of Operator functions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Function"
+            }
+          }
+        },
+        "required": [
+          "metadata",
+          "config",
+          "functions"
+        ]
+      }
+    }
+  }
+}

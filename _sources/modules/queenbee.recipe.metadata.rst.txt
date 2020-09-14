@@ -1,0 +1,7 @@
+queenbee.recipe.metadata module
+===============================
+
+.. automodule:: queenbee.recipe.metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:

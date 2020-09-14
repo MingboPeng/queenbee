@@ -1,0 +1,20 @@
+queenbee.workflow package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   queenbee.workflow.arguments
+   queenbee.workflow.status
+   queenbee.workflow.workflow
+
+Module contents
+---------------
+
+.. automodule:: queenbee.workflow
+   :members:
+   :undoc-members:
+   :show-inheritance:

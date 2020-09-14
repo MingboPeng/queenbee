@@ -1,0 +1,20 @@
+queenbee.operator package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   queenbee.operator.function
+   queenbee.operator.metadata
+   queenbee.operator.operator
+
+Module contents
+---------------
+
+.. automodule:: queenbee.operator
+   :members:
+   :undoc-members:
+   :show-inheritance:

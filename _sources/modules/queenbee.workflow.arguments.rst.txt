@@ -1,0 +1,7 @@
+queenbee.workflow.arguments module
+==================================
+
+.. automodule:: queenbee.workflow.arguments
+   :members:
+   :undoc-members:
+   :show-inheritance:

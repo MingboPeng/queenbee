@@ -1,0 +1,1163 @@
+{
+  "openapi": "3.0.2",
+  "servers": [],
+  "info": {
+    "description": "Schema documentation for Queenbee Recipes",
+    "version": "1.16.3",
+    "title": "Queenbee Recipe Schema",
+    "contact": {
+      "name": "Ladybug Tools",
+      "email": "info@ladybug.tools",
+      "url": "https://github.com/ladybug-tools/queenbee"
+    },
+    "x-logo": {
+      "url": "https://user-images.githubusercontent.com/2915573/71930319-6986f200-3169-11ea-984d-b0f330cfaaa3.png",
+      "altText": "Queenbee logo"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/ladybug-tools/queenbee/blob/master/LICENSE"
+    }
+  },
+  "externalDocs": {
+    "description": "GitHub Repository",
+    "url": "https://github.com/ladybug-tools/queenbee"
+  },
+  "tags": [
+    {
+      "name": "dag_model",
+      "x-displayName": "DAG",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAG\" />\n"
+    },
+    {
+      "name": "daginputartifact_model",
+      "x-displayName": "DAGInputArtifact",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGInputArtifact\" />\n"
+    },
+    {
+      "name": "daginputparameter_model",
+      "x-displayName": "DAGInputParameter",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGInputParameter\" />\n"
+    },
+    {
+      "name": "daginputs_model",
+      "x-displayName": "DAGInputs",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGInputs\" />\n"
+    },
+    {
+      "name": "dagoutputartifact_model",
+      "x-displayName": "DAGOutputArtifact",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGOutputArtifact\" />\n"
+    },
+    {
+      "name": "dagoutputparameter_model",
+      "x-displayName": "DAGOutputParameter",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGOutputParameter\" />\n"
+    },
+    {
+      "name": "dagoutputs_model",
+      "x-displayName": "DAGOutputs",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGOutputs\" />\n"
+    },
+    {
+      "name": "dagtask_model",
+      "x-displayName": "DAGTask",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTask\" />\n"
+    },
+    {
+      "name": "dagtaskargument_model",
+      "x-displayName": "DAGTaskArgument",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskArgument\" />\n"
+    },
+    {
+      "name": "dagtaskartifactargument_model",
+      "x-displayName": "DAGTaskArtifactArgument",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskArtifactArgument\" />\n"
+    },
+    {
+      "name": "dagtaskloop_model",
+      "x-displayName": "DAGTaskLoop",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskLoop\" />\n"
+    },
+    {
+      "name": "dagtaskoutputartifact_model",
+      "x-displayName": "DAGTaskOutputArtifact",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskOutputArtifact\" />\n"
+    },
+    {
+      "name": "dagtaskoutputparameter_model",
+      "x-displayName": "DAGTaskOutputParameter",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskOutputParameter\" />\n"
+    },
+    {
+      "name": "dagtaskoutputs_model",
+      "x-displayName": "DAGTaskOutputs",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskOutputs\" />\n"
+    },
+    {
+      "name": "dagtaskparameterargument_model",
+      "x-displayName": "DAGTaskParameterArgument",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DAGTaskParameterArgument\" />\n"
+    },
+    {
+      "name": "dependency_model",
+      "x-displayName": "Dependency",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Dependency\" />\n"
+    },
+    {
+      "name": "dependencytype_model",
+      "x-displayName": "DependencyType",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/DependencyType\" />\n"
+    },
+    {
+      "name": "folderartifactreference_model",
+      "x-displayName": "FolderArtifactReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FolderArtifactReference\" />\n"
+    },
+    {
+      "name": "folderreference_model",
+      "x-displayName": "FolderReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/FolderReference\" />\n"
+    },
+    {
+      "name": "httpsource_model",
+      "x-displayName": "HTTPSource",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/HTTPSource\" />\n"
+    },
+    {
+      "name": "inputartifactreference_model",
+      "x-displayName": "InputArtifactReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/InputArtifactReference\" />\n"
+    },
+    {
+      "name": "inputparameterreference_model",
+      "x-displayName": "InputParameterReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/InputParameterReference\" />\n"
+    },
+    {
+      "name": "inputreference_model",
+      "x-displayName": "InputReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/InputReference\" />\n"
+    },
+    {
+      "name": "itemparameterreference_model",
+      "x-displayName": "ItemParameterReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/ItemParameterReference\" />\n"
+    },
+    {
+      "name": "itemreference_model",
+      "x-displayName": "ItemReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/ItemReference\" />\n"
+    },
+    {
+      "name": "license_model",
+      "x-displayName": "License",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/License\" />\n"
+    },
+    {
+      "name": "maintainer_model",
+      "x-displayName": "Maintainer",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Maintainer\" />\n"
+    },
+    {
+      "name": "metadata_model",
+      "x-displayName": "MetaData",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/MetaData\" />\n"
+    },
+    {
+      "name": "projectfoldersource_model",
+      "x-displayName": "ProjectFolderSource",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/ProjectFolderSource\" />\n"
+    },
+    {
+      "name": "recipe_model",
+      "x-displayName": "Recipe",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Recipe\" />\n"
+    },
+    {
+      "name": "s3source_model",
+      "x-displayName": "S3Source",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/S3Source\" />\n"
+    },
+    {
+      "name": "taskartifactreference_model",
+      "x-displayName": "TaskArtifactReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/TaskArtifactReference\" />\n"
+    },
+    {
+      "name": "taskparameterreference_model",
+      "x-displayName": "TaskParameterReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/TaskParameterReference\" />\n"
+    },
+    {
+      "name": "taskreference_model",
+      "x-displayName": "TaskReference",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/TaskReference\" />\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Workflow",
+      "tags": [
+        "dag_model",
+        "daginputartifact_model",
+        "daginputparameter_model",
+        "daginputs_model",
+        "dagoutputartifact_model",
+        "dagoutputparameter_model",
+        "dagoutputs_model",
+        "dagtask_model",
+        "dagtaskargument_model",
+        "dagtaskartifactargument_model",
+        "dagtaskloop_model",
+        "dagtaskoutputartifact_model",
+        "dagtaskoutputparameter_model",
+        "dagtaskoutputs_model",
+        "dagtaskparameterargument_model",
+        "dependency_model",
+        "dependencytype_model",
+        "folderartifactreference_model",
+        "folderreference_model",
+        "httpsource_model",
+        "inputartifactreference_model",
+        "inputparameterreference_model",
+        "inputreference_model",
+        "itemparameterreference_model",
+        "itemreference_model",
+        "license_model",
+        "maintainer_model",
+        "metadata_model",
+        "projectfoldersource_model",
+        "recipe_model",
+        "s3source_model",
+        "taskartifactreference_model",
+        "taskparameterreference_model",
+        "taskreference_model"
+      ]
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Maintainer": {
+        "title": "Maintainer",
+        "description": "Maintainer information",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the author/maintainer person or organization.",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "description": "The email address of the author/maintainer person or organization.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "License": {
+        "title": "License",
+        "description": "License information for the Recipe",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The license name used for the recipe.",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "description": "A URL to the license used for the recipe.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "MetaData": {
+        "title": "MetaData",
+        "description": "Recipe metadata information.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Recipe name. Make it descriptive and helpful ;)",
+            "type": "string"
+          },
+          "tag": {
+            "title": "Tag",
+            "description": "The tag of the recipe",
+            "type": "string"
+          },
+          "keywords": {
+            "title": "Keywords",
+            "description": "A list of keywords to search the recipe by",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maintainers": {
+            "title": "Maintainers",
+            "description": "A list of maintainers for the recipe",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Maintainer"
+            }
+          },
+          "home": {
+            "title": "Home",
+            "description": "The URL of this recipe's home page",
+            "type": "string"
+          },
+          "sources": {
+            "title": "Sources",
+            "description": "A list of URLs to source code for this project",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "title": "Icon",
+            "description": "A URL to an SVG or PNG image to be used as an icon",
+            "type": "string"
+          },
+          "deprecated": {
+            "title": "Deprecated",
+            "description": "Whether this recipe is deprecated",
+            "type": "boolean"
+          },
+          "description": {
+            "title": "Description",
+            "description": "A description of what this recipe does",
+            "type": "string"
+          },
+          "license": {
+            "title": "License",
+            "description": "The license information.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/License"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "tag"
+        ]
+      },
+      "DependencyType": {
+        "title": "DependencyType",
+        "description": "An enumeration.",
+        "enum": [
+          "recipe",
+          "operator"
+        ],
+        "type": "string"
+      },
+      "Dependency": {
+        "title": "Dependency",
+        "description": "Configuration to fetch a Recipe or Operator that another Recipe depends on.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DependencyType"
+          },
+          "name": {
+            "title": "Name",
+            "description": "Workflow name. This name should be unique among all the resources in your resource. Use an alias if this is not the case.",
+            "type": "string"
+          },
+          "hash": {
+            "title": "Hash",
+            "description": "The digest hash of the dependency when retrieved from its source. This is locked when the resource dependencies are downloaded.",
+            "type": "string"
+          },
+          "alias": {
+            "title": "Alias",
+            "description": "An optional alias to refer to this dependency. Useful if the name is already used somewhere else.",
+            "type": "string"
+          },
+          "tag": {
+            "title": "Tag",
+            "description": "Tag of the resource.",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "description": "URL to a repository where this resource can be found.",
+            "examples": [
+              "https://registry.pollination.cloud/ladybugbot",
+              "https://some-random-user.github.io/registry"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "tag",
+          "source"
+        ]
+      },
+      "DAGInputParameter": {
+        "title": "DAGInputParameter",
+        "description": "An input parameter used within the DAG.",
+        "type": "object",
+        "properties": {
+          "annotations": {
+            "title": "Annotations",
+            "description": "Optional annotations for Queenbee objects.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "title": "Name",
+            "description": "Name is the parameter name. must be unique within a task's inputs.",
+            "type": "string"
+          },
+          "default": {
+            "title": "Default",
+            "description": "Default value to use for an input parameter if a value was not supplied.",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Optional description for input parameter.",
+            "type": "string"
+          },
+          "required": {
+            "title": "Required",
+            "description": "Whether this value must be specified in a task argument.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "HTTPSource": {
+        "title": "HTTPSource",
+        "description": "HTTPSource\n\nA web HTTP to an FTP server or an API for example.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "default": "http",
+            "pattern": "^http$",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "description": "For a HTTP endpoint this can be http://climate.onebuilding.org.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "S3Source": {
+        "title": "S3Source",
+        "description": "S3Source\n\nAn S3 bucket artifact Source.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "default": "s3",
+            "pattern": "^s3$",
+            "type": "string"
+          },
+          "key": {
+            "title": "Key",
+            "description": "The path inside the bucket to source artifacts from.",
+            "type": "string"
+          },
+          "endpoint": {
+            "title": "Endpoint",
+            "description": "The HTTP endpoint to reach the S3 bucket.",
+            "type": "string"
+          },
+          "bucket": {
+            "title": "Bucket",
+            "description": "The name of the S3 bucket on the host server.",
+            "type": "string"
+          },
+          "credentials_path": {
+            "title": "Credentials Path",
+            "description": "Path to the file holding the AccessKey and SecretAccessKey to authenticate to the bucket. Assumes public bucket access if none are specified.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "endpoint",
+          "bucket"
+        ]
+      },
+      "ProjectFolderSource": {
+        "title": "ProjectFolderSource",
+        "description": "Project Folder Source\n\nThis is the path to a folder where files and folders can be sourced. In the context\nof a desktop run Workflow this folder will correspond to a local folder. In the\ncontext of a workflow run on Pollination this folder will correspond to a Project\nscoped folder.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "default": "project-folder",
+            "pattern": "^project-folder$",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "description": "For a local filesystem this can be \"C:\\Users\\me\\simulations\\test\". This will correspond to the run specific folder .",
+            "type": "string"
+          }
+        }
+      },
+      "DAGInputArtifact": {
+        "title": "DAGInputArtifact",
+        "description": "An artifact used within the DAG.",
+        "type": "object",
+        "properties": {
+          "annotations": {
+            "title": "Annotations",
+            "description": "Optional annotations for Queenbee objects.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "title": "Name",
+            "description": "The name of the artifact within the scope of the DAG",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Optional description for the input artifact",
+            "type": "string"
+          },
+          "default": {
+            "title": "Default",
+            "description": "If no artifact is specified then pull it from this source location.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/HTTPSource"
+              },
+              {
+                "$ref": "#/components/schemas/S3Source"
+              },
+              {
+                "$ref": "#/components/schemas/ProjectFolderSource"
+              }
+            ]
+          },
+          "required": {
+            "title": "Required",
+            "description": "Whether this value must be specified in a task argument.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DAGInputs": {
+        "title": "DAGInputs",
+        "description": "Inputs of a DAG.",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "description": "A list of parameters the DAG will use as input values",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGInputParameter"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "description": "A list of artifacts the DAG will use",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGInputArtifact"
+            }
+          }
+        }
+      },
+      "InputReference": {
+        "title": "InputReference",
+        "description": "An enumeration.",
+        "enum": [
+          "inputs"
+        ]
+      },
+      "InputParameterReference": {
+        "title": "InputParameterReference",
+        "description": "An Input Parameter Reference",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/InputReference"
+          },
+          "variable": {
+            "title": "Variable",
+            "description": "The name of the DAG input variable",
+            "type": "string"
+          }
+        },
+        "required": [
+          "variable"
+        ]
+      },
+      "TaskReference": {
+        "title": "TaskReference",
+        "description": "An enumeration.",
+        "enum": [
+          "tasks"
+        ]
+      },
+      "TaskParameterReference": {
+        "title": "TaskParameterReference",
+        "description": "A Task Parameter Reference",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TaskReference"
+          },
+          "name": {
+            "title": "Name",
+            "description": "The name of the task to pull output data from",
+            "type": "string"
+          },
+          "variable": {
+            "title": "Variable",
+            "description": "The name of the task output variable",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "variable"
+        ]
+      },
+      "ItemReference": {
+        "title": "ItemReference",
+        "description": "An enumeration.",
+        "enum": [
+          "item"
+        ]
+      },
+      "ItemParameterReference": {
+        "title": "ItemParameterReference",
+        "description": "An Item Parameter Reference",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ItemReference"
+          },
+          "variable": {
+            "title": "Variable",
+            "description": "The name of the looped item variable (use dot notation for nested json values)",
+            "type": "string"
+          }
+        }
+      },
+      "DAGTaskParameterArgument": {
+        "title": "DAGTaskParameterArgument",
+        "description": "Input argument for a DAG task.\n\nThe name must correspond to an input parameter from the template function the task\nrefers to.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the argument variable",
+            "type": "string"
+          },
+          "from": {
+            "title": "From",
+            "description": "The previous task or global workflow variable to pull this argument from",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InputParameterReference"
+              },
+              {
+                "$ref": "#/components/schemas/TaskParameterReference"
+              },
+              {
+                "$ref": "#/components/schemas/ItemParameterReference"
+              }
+            ]
+          },
+          "value": {
+            "title": "Value",
+            "description": "The fixed value for this task argument",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "InputArtifactReference": {
+        "title": "InputArtifactReference",
+        "description": "An Input Artifact Reference",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/InputReference"
+          },
+          "variable": {
+            "title": "Variable",
+            "description": "The name of the DAG input variable",
+            "type": "string"
+          }
+        },
+        "required": [
+          "variable"
+        ]
+      },
+      "TaskArtifactReference": {
+        "title": "TaskArtifactReference",
+        "description": "A Task Artifact Reference",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TaskReference"
+          },
+          "name": {
+            "title": "Name",
+            "description": "The name of the task to pull output data from",
+            "type": "string"
+          },
+          "variable": {
+            "title": "Variable",
+            "description": "The name of the task output variable",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "variable"
+        ]
+      },
+      "FolderReference": {
+        "title": "FolderReference",
+        "description": "An enumeration.",
+        "enum": [
+          "folder"
+        ]
+      },
+      "FolderArtifactReference": {
+        "title": "FolderArtifactReference",
+        "description": "A Base reference model",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/FolderReference"
+          },
+          "path": {
+            "title": "Path",
+            "description": "The path to the file or folder relative to the workflow output folder",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "DAGTaskArtifactArgument": {
+        "title": "DAGTaskArtifactArgument",
+        "description": "Input argument for a DAG task.\n\nThe name must correspond to an input artifact from the template function the task\nrefers to.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the argument variable",
+            "type": "string"
+          },
+          "from": {
+            "title": "From",
+            "description": "The previous task or global workflow variable to pull this argument from",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InputArtifactReference"
+              },
+              {
+                "$ref": "#/components/schemas/TaskArtifactReference"
+              },
+              {
+                "$ref": "#/components/schemas/FolderArtifactReference"
+              }
+            ]
+          },
+          "subpath": {
+            "title": "Subpath",
+            "description": "Specify this value if your source artifact is a repository and you want to source an artifact from within that directory.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "from"
+        ]
+      },
+      "DAGTaskArgument": {
+        "title": "DAGTaskArgument",
+        "description": "DAG task argument.\n\nThese arguments should match the inputs from the template referenced in the task.",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "description": "A list of input parameters to pass to the task",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGTaskParameterArgument"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "description": "A list of input artifacts to pass to the task",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGTaskArtifactArgument"
+            }
+          }
+        }
+      },
+      "DAGTaskLoop": {
+        "title": "DAGTaskLoop",
+        "description": "Loop configuration for the task.\n\nThis will run the template provided multiple times and in parallel relative to an\ninput or task parameter which should be a list.",
+        "type": "object",
+        "properties": {
+          "from": {
+            "title": "From",
+            "description": "The task or DAG parameter to loop over (must be iterable).",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InputParameterReference"
+              },
+              {
+                "$ref": "#/components/schemas/TaskParameterReference"
+              }
+            ]
+          },
+          "value": {
+            "title": "Value",
+            "description": "A list of values or JSON objects to loop over.",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "DAGTaskOutputParameter": {
+        "title": "DAGTaskOutputParameter",
+        "description": "Output parameter for a DAG task.\n\nThe name must correspond to an output parameter from the template function the task\nrefers to.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the output variable",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DAGTaskOutputArtifact": {
+        "title": "DAGTaskOutputArtifact",
+        "description": "Output artifact for a DAG task.\n\nThe name must correspond to an output artifact from the template function the task\nrefers to.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the output variable",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "description": "The path where the artifact should be saved relative to the DAG folder.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DAGTaskOutputs": {
+        "title": "DAGTaskOutputs",
+        "description": "These outputs should match the outputs from the template referenced in the task",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "description": "A list of output parameters to expose from the task",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGTaskOutputParameter"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "description": "A list of output artifacts to expose from the task",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGTaskOutputArtifact"
+            }
+          }
+        }
+      },
+      "DAGTask": {
+        "title": "DAGTask",
+        "description": "The instance of a function template matched with DAG inputs and outputs.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name for this step. It must be unique in DAG.",
+            "type": "string"
+          },
+          "template": {
+            "title": "Template",
+            "description": "Template name.",
+            "type": "string"
+          },
+          "arguments": {
+            "title": "Arguments",
+            "description": "The input arguments for this task",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DAGTaskArgument"
+              }
+            ]
+          },
+          "dependencies": {
+            "title": "Dependencies",
+            "description": "Dependencies are name of other DAG steps which this depends on.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "loop": {
+            "title": "Loop",
+            "description": "List of inputs to loop over.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DAGTaskLoop"
+              }
+            ]
+          },
+          "sub_folder": {
+            "title": "Sub Folder",
+            "description": "A path relative to the current folder context where artifacts should be saved. This is useful when performing a loop or invoking another workflow and wanting to save results in a specific folder.",
+            "type": "string"
+          },
+          "outputs": {
+            "title": "Outputs",
+            "description": "The outputs of this task",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DAGTaskOutputs"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "template"
+        ]
+      },
+      "DAGOutputParameter": {
+        "title": "DAGOutputParameter",
+        "description": "A parameter sourced from within the DAG that is exposed as an output.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the output variable",
+            "type": "string"
+          },
+          "from": {
+            "title": "From",
+            "description": "The task reference to pull this output variable from. Note, this must be an output variable.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TaskParameterReference"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "from"
+        ]
+      },
+      "DAGOutputArtifact": {
+        "title": "DAGOutputArtifact",
+        "description": "An artifact sourced from within the DAG that is exposed as an output",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "The name of the output variable",
+            "type": "string"
+          },
+          "from": {
+            "title": "From",
+            "description": "The task reference to pull this output variable from. Note, this must be an output variable.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TaskArtifactReference"
+              },
+              {
+                "$ref": "#/components/schemas/FolderArtifactReference"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "from"
+        ]
+      },
+      "DAGOutputs": {
+        "title": "DAGOutputs",
+        "description": "Artifacts and Parameters exposed by the DAG",
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "title": "Parameters",
+            "description": "A list of output parameters exposed by this DAG",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGOutputParameter"
+            }
+          },
+          "artifacts": {
+            "title": "Artifacts",
+            "description": "A list of output artifacts exposed by this DAG",
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGOutputArtifact"
+            }
+          }
+        }
+      },
+      "DAG": {
+        "title": "DAG",
+        "description": "A Directed Acyclic Graph containing a list of tasks.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "A unique name for this dag.",
+            "type": "string"
+          },
+          "inputs": {
+            "title": "Inputs",
+            "description": "Inputs for the DAG.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DAGInputs"
+              }
+            ]
+          },
+          "fail_fast": {
+            "title": "Fail Fast",
+            "description": "Stop scheduling new steps, as soon as it detects that one of the DAG nodes is failed. Default is True.",
+            "default": true,
+            "type": "boolean"
+          },
+          "tasks": {
+            "title": "Tasks",
+            "description": "Tasks are a list of DAG steps",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAGTask"
+            }
+          },
+          "outputs": {
+            "title": "Outputs",
+            "description": "Outputs of the DAG that can be used by other DAGs",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DAGOutputs"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "tasks"
+        ]
+      },
+      "Recipe": {
+        "title": "Recipe",
+        "description": "A Queenbee Recipe",
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "title": "Metadata",
+            "description": "Recipe metadata information.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaData"
+              }
+            ]
+          },
+          "dependencies": {
+            "title": "Dependencies",
+            "description": "A list of operators and other recipes this recipe depends on.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dependency"
+            }
+          },
+          "flow": {
+            "title": "Flow",
+            "description": "A list of tasks to create a DAG recipe.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DAG"
+            }
+          }
+        },
+        "required": [
+          "flow"
+        ]
+      }
+    }
+  }
+}

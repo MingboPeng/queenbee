@@ -1,0 +1,7 @@
+queenbee.operator.operator module
+=================================
+
+.. automodule:: queenbee.operator.operator
+   :members:
+   :undoc-members:
+   :show-inheritance:
